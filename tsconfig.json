@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "module": "ES2022",
+    "outDir": "./dist",
+    "target": "ES2021",
+    "typeRoots": [
+      "./node_modules/vanilla-cookieconsent/types"
+    ]
+  },
+  "include": [
+    "src"
+  ]
+}
