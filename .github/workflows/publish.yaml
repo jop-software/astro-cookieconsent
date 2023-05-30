@@ -50,7 +50,8 @@ jobs:
           version: 8.6.0
           run_install: false
 
-      - run: pnpm publish
+        # --no-git-checks is needed, because this pipelies runs on the pushed tag which is in a detached HEAD state
+      - run: pnpm publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -76,6 +77,7 @@ jobs:
           version: 8.6.0
           run_install: false
 
-      - run: pnpm publish --access public
+        # --no-git-checks is needed, because this pipelies runs on the pushed tag which is in a detached HEAD state
+      - run: pnpm publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
