@@ -1,0 +1,23 @@
+name: "CI - Pipeline 🚀"
+
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      workflow:
+        description: "Workflow to run"
+        required: true
+        default: "lint"
+
+jobs:
+
+  lint:
+    uses: "./.github/workflows/lint.yaml"
+
+  build:
+    needs:
+      - lint
+    uses: "./.github/workflows/build.yaml"
