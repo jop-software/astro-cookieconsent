@@ -37,7 +37,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: astro-cookieconsent
-          path: .
+          path: ./dist
           
       # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v3
