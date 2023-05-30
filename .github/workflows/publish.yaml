@@ -1,0 +1,59 @@
+name: "Publish 🚀"
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  lint:
+    uses: "./.github/workflows/lint.yaml"
+
+  build:
+    uses: "./.github/workflows/build.yaml"
+
+  publish-github:
+    name: "Publish to Github Packages"
+    needs:
+      - lint
+      - build
+    runs-on: ubuntu-latest 
+    permissions: 
+      contents: read
+      packages: write 
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: astro-cookieconsent
+          path: .
+          
+      # Setup .npmrc file to publish to GitHub Packages
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://npm.pkg.github.com'
+
+      - run: pnpm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish-npm:
+    name: "Publish to NPM"
+    needs:
+      - lint
+      - build
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: astro-cookieconsent
+          path: .
+          
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: "https://registry.npmjs.org/"
+
+      - run: pnpm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
