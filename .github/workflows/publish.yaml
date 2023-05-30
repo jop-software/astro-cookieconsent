@@ -44,6 +44,11 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://npm.pkg.github.com'
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.0
+          run_install: false
+
       - run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -63,6 +68,11 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: "https://registry.npmjs.org/"
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.0
+          run_install: false
 
       - run: pnpm publish --access public
         env:
