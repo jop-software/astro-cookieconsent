@@ -65,7 +65,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: astro-cookieconsent
-          path: .
+          path: ./dist
           
       - uses: actions/setup-node@v3
         with:
