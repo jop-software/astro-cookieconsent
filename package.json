@@ -4,7 +4,7 @@
     "description": "vanilla-cookieconsent for astro",
     "type": "module",
     "license": "GPL-3.0-or-later",
-    "types": "./dist/index.d.ts",
+    "types": "./dist/main.d.ts",
     "keywords": [
         "astro-integration",
         "astro-component",
