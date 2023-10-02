@@ -11,12 +11,12 @@ const createPlugin = (config: UserConfig) => {
         );
         injectScript(
           "page",
-          `window.cookieConentConfiguration = ${JSON.stringify(config)}`
+          `window.cookieConsentConfiguration = ${JSON.stringify(config)}`
         );
-        injectScript("page", `window.cookieConent = initCookieConsent();`);
+        injectScript("page", `window.cookieConsent = initCookieConsent();`);
         injectScript(
           "page",
-          `window.cookieConent.run(window.cookieConentConfiguration);`
+          `window.cookieConsent.run(window.cookieConsentConfiguration);`
         );
       },
     },
