@@ -2,7 +2,7 @@ import * as CookieConsent from "vanilla-cookieconsent";
 
 const createPlugin = (config: UserConfig) => {
   return {
-    name: "@jop-software/astro-cookie-consent",
+    name: "@jop-software/astro-cookieconsent",
     hooks: {
       "astro:config:setup": async ({ injectScript }: any) => {
         injectScript(
