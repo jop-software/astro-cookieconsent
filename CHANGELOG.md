@@ -1,6 +1,6 @@
 # 2.0.0
 
-> [!BREAKING]  
+> [!WARNING]  
 > This Update includes breaking changes. Please read the changelogs to see what you might need to change.
 
 **Breaking Changes**
