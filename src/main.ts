@@ -7,7 +7,11 @@ const createPlugin = (config: UserConfig) => {
       "astro:config:setup": async ({ injectScript }: any) => {
         injectScript(
           "page",
-          "import 'vanilla-cookieconsent'; import 'vanilla-cookieconsent/dist/cookieconsent.css';"
+          "import 'vanilla-cookieconsent';"
+        );
+        injectScript(
+          "page-ssr",
+          "import 'vanilla-cookieconsent/dist/cookieconsent.css';"
         );
         injectScript(
           "page",
