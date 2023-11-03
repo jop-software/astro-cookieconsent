@@ -4,7 +4,7 @@
     "description": "vanilla-cookieconsent for astro",
     "type": "module",
     "license": "GPL-3.0-or-later",
-    "types": "./dist/main.d.ts",
+    "types": "./dist/index.d.ts",
     "keywords": [
         "astro-integration",
         "astro-component",
@@ -18,6 +18,11 @@
             "name": "Johannes Przymusinski",
             "email": "johannes.przymusinski@jop-software.de",
             "url": "https://jop-software.de"
+        },
+        {
+            "name": "Fazal",
+            "email": "fazal@method-digital.com",
+            "url": "https://method-digital.com"
         }
     ],
     "exports": {
