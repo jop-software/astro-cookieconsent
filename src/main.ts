@@ -1,4 +1,6 @@
-import * as CookieConsent from "vanilla-cookieconsent";
+/// <reference path="vanilla-cookieconsent.d.ts" />
+
+import * as CookieConsent from 'vanilla-cookieconsent';
 
 const createPlugin = (config: UserConfig) => {
   return {
