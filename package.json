@@ -1,54 +1,57 @@
 {
-    "name": "@jop-software/astro-cookieconsent",
-    "version": "2.0.0",
-    "description": "vanilla-cookieconsent for astro",
-    "type": "module",
-    "license": "GPL-3.0-or-later",
-    "types": "./dist/main.d.ts",
-    "keywords": [
-        "astro-integration",
-        "astro-component",
-        "cookieconsent",
-        "consent",
-        "tracking",
-        "gdpr"
-    ],
-    "contributors": [
-        {
-            "name": "Johannes Przymusinski",
-            "email": "johannes.przymusinski@jop-software.de",
-            "url": "https://jop-software.de"
-        }
-    ],
-    "exports": {
-        ".": {
-            "import": "./dist/astro-cookieconsent.es.js",
-            "require": "./dist/astro-cookieconsent.umd.js"
-        }
+  "name": "@jop-software/astro-cookieconsent",
+  "version": "2.0.0",
+  "description": "vanilla-cookieconsent for astro",
+  "type": "module",
+  "license": "GPL-3.0-or-later",
+  "types": "./dist/main.d.ts",
+  "keywords": [
+    "astro-integration",
+    "astro-component",
+    "cookieconsent",
+    "consent",
+    "tracking",
+    "gdpr"
+  ],
+  "contributors": [
+    {
+      "name": "Johannes Przymusinski",
+      "email": "johannes.przymusinski@jop-software.de",
+      "url": "https://jop-software.de"
     },
-    "main": "./dist/astro-cookieconsent.umd.js",
-    "module": "./dist/astro-cookieconsent.es.js",
-    "files": [
-        "dist"
-    ],
-    "scripts": {
-        "build": "vite build && tsc --emitDeclarationOnly",
-        "build:watch": "vite build --watch",
-        "dev": "vite",
-        "prettier:check": "prettier --check src",
-        "prettier:write": "prettier --write src"
-    },
-    "devDependencies": {
-        "astro": "^1.8.0",
-        "prettier": "^2.7.1",
-        "typescript": "^4.9.4",
-        "vite": "^4.0.3"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jop-software/astro-cookieconsent"
-    },
-    "peerDependencies": {
-        "vanilla-cookieconsent": "^2.9.1"
+    {
+      "name": "Artur Bauer"
     }
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/astro-cookieconsent.es.js",
+      "require": "./dist/astro-cookieconsent.umd.js"
+    }
+  },
+  "main": "./dist/astro-cookieconsent.umd.js",
+  "module": "./dist/astro-cookieconsent.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "build:watch": "vite build --watch",
+    "dev": "vite",
+    "prettier:check": "prettier --check src",
+    "prettier:write": "prettier --write src"
+  },
+  "devDependencies": {
+    "astro": "^1.8.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jop-software/astro-cookieconsent"
+  },
+  "peerDependencies": {
+    "vanilla-cookieconsent": "^3.0.0"
+  }
 }

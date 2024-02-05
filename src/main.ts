@@ -1,32 +1,25 @@
-import * as CookieConsent from "vanilla-cookieconsent";
+import { type AstroIntegration } from "astro";
+import { type CookieConsentConfig } from "vanilla-cookieconsent";
 
-const createPlugin = (config: UserConfig) => {
+const createPlugin = (config: CookieConsentConfig): AstroIntegration => {
   return {
     name: "@jop-software/astro-cookieconsent",
     hooks: {
-      "astro:config:setup": async ({ injectScript }: any) => {
+      "astro:config:setup": async ({ injectScript }) => {
         injectScript(
           "page",
-          "import 'vanilla-cookieconsent';"
+          "import * as cookieConsent from 'vanilla-cookieconsent';"
         );
         injectScript(
           "page-ssr",
           "import 'vanilla-cookieconsent/dist/cookieconsent.css';"
         );
-        injectScript(
-          "page",
-          `window.cookieConsentConfiguration = ${JSON.stringify(config)}`
-        );
-        injectScript("page", `window.cookieConsent = initCookieConsent();`);
-        injectScript(
-          "page",
-          `window.cookieConsent.run(window.cookieConsentConfiguration);`
-        );
+        injectScript("page", `cookieConsent.run(${JSON.stringify(config)});`);
       },
     },
   };
 };
 
-export type { CookieConsent };
+export type { CookieConsentConfig };
 
 export default createPlugin;
