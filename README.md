@@ -34,6 +34,9 @@ Make sure that either your package manager installs peer dependencies or to manu
 
 ## Usage
 
+> [!NOTE]  
+> This is an example configuration, passing JavaScript callbacks here is currently not supported.
+
 ```javascript
 // astro.config.mjs
 
@@ -45,19 +48,20 @@ export default defineConfig({
         // ...
         cookieconsent({
             // ...
-            gui_options: {
-                consent_modal: {
-                    layout: 'cloud',               // box/cloud/bar
-                    position: 'bottom center',     // bottom/middle/top + left/right/center
-                    transition: 'slide',           // zoom/slide
-                    swap_buttons: false            // enable to invert buttons
+            guiOptions: {
+                consentModal: {
+                    layout: 'cloud',
+                    position: 'bottom center',
+                    equalWeightButtons: true,
+                    flipButtons: false,
                 },
-                settings_modal: {
-                    layout: 'box',                 // box/bar
-                    // position: 'left',           // left/right
-                    transition: 'slide'            // zoom/slide
-                }
-            }
+                preferencesModal: {
+                    layout: "box",
+                    position: "right",
+                    equalWeightButtons: true,
+                    flipButtons: false,
+                },
+            },
             // ...
         }),
     ],
@@ -66,6 +70,15 @@ export default defineConfig({
 
 When you call the integration, you can use the same configuration as you can in the [vanilla-cookieconsent](https://github.com/orestbida/cookieconsent) package. 
 Check their [Readme](https://github.com/orestbida/cookieconsent/blob/master/Readme.md) for more information and documentation.
+
+## Versions
+
+| Version | State | `vanilla-cookieconsent` Version |
+| --- | --- | --- |
+| `3.x` | ![Unsupported](https://img.shields.io/badge/active_support-green?style=for-the-badge) | `3.x` |
+| `2.x` | ![Unsupported](https://img.shields.io/badge/security_and_enterprise-orange?style=for-the-badge) | `2.x` |
+| `1.x` | ![Unsupported](https://img.shields.io/badge/unsupported-red?style=for-the-badge) | `2.x` |
+
 
 ## Professional support
 
