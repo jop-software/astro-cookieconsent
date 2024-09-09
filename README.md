@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>vanilla-cookieconent + Astro Integration</h1>
+    <h1>vanilla-cookieconsent + Astro Integration</h1>
 </div>
 
 > Use [vanilla-cookieconsent](https://github.com/orestbida/cookieconsent) natively in Astro 🍪
