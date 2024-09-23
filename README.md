@@ -40,26 +40,92 @@ Make sure that either your package manager installs peer dependencies or to manu
 ```javascript
 // astro.config.mjs
 
-import cookieconsent from "@jop-software/astro-cookieconsent";
+import jopSoftwarecookieconsent from '@jop-software/astro-cookieconsent';
 
 export default defineConfig({
     // ...
     integrations: [
         // ...
-        cookieconsent({
+        jopSoftwarecookieconsent({
             // ...
             guiOptions: {
                 consentModal: {
-                    layout: 'cloud',
-                    position: 'bottom center',
+                    layout: 'box',
+                    position: 'bottom left',
                     equalWeightButtons: true,
                     flipButtons: false,
                 },
                 preferencesModal: {
-                    layout: "box",
-                    position: "right",
+                    layout: 'box',
+                    position: 'right',
                     equalWeightButtons: true,
                     flipButtons: false,
+                },
+            },            
+            categories: { // Required, at least one category is required
+                necessary: {
+                enabled: true, // this category is enabled by default
+                readOnly: true, // this category cannot be disabled
+                },
+                preferences: {
+                enabled: true, // this category is enabled by default
+                },
+                statistics: {
+                enabled: true,
+                },
+                marketing: {
+                enabled: true,
+                },
+            },            
+            language: { // Required, at least one language is required
+                default: 'en',
+                translations: { // This is a template content
+                    en: {
+                        consentModal: {
+                            title: 'This website uses cookies',
+                            description: 'We use cookies to ...',
+                            acceptAllBtn: 'Allow all',
+                            acceptNecessaryBtn: 'Deny',
+                            showPreferencesBtn: 'Allow selection',
+                        },
+                        preferencesModal: {
+                            title: 'Manage cookie preferences',
+                            acceptAllBtn: 'Allow all',
+                            acceptNecessaryBtn: 'Deny all',
+                            savePreferencesBtn: 'Allow selection',
+                            closeIconLabel: 'Close cokkie preferences',
+                            sections: [
+                                {
+                                title: 'This website uses cookies',
+                                description:'We use cookies to ...',
+                                },
+                                {
+                                title: 'Necessary',
+                                description: 'Necessary cookies ...',
+                                linkedCategory: 'necessary',
+                                },
+                                {
+                                title: 'Preferences',
+                                description: 'Preference cookies ...',
+                                linkedCategory: 'preferences',
+                                },
+                                {
+                                title: 'Statistics',
+                                description: 'Statistic cookies ...',
+                                linkedCategory: 'statistics',
+                                },
+                                {
+                                title: 'Marketing',
+                                description: 'Marketing cookies ...',
+                                linkedCategory: 'marketing',
+                                },                            
+                                {
+                                title: 'More information',
+                                description: `Cookies are ...`,
+                                },
+                            ],
+                        },
+                    },
                 },
             },
             // ...
