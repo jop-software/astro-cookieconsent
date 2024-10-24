@@ -25,6 +25,7 @@
   ],
   "exports": {
     ".": {
+      "types": "./dist/main.d.ts",
       "import": "./dist/astro-cookieconsent.es.js",
       "require": "./dist/astro-cookieconsent.umd.js"
     }
