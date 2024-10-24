@@ -1,6 +1,6 @@
 {
   "name": "@jop-software/astro-cookieconsent",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "vanilla-cookieconsent for astro",
   "type": "module",
   "license": "GPL-3.0-or-later",
